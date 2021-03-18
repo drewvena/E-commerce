@@ -34,7 +34,11 @@ router.post('/', (req, res) => {
       product_name: req.body.product_name,
       price: req.body.price,
       stock: req.body.stock,
-      tagIds: req.params.tag
+      category_id: req.params.category_id
+  })
+  .then(data => res.json(data))
+  .catch (err => {
+    console.log(err)
   })
   
   Product.create(req.body)
